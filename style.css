@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
-
-
-
 :root {
+
+
+
+
   --clr-accent-400: hsl(12, 88%, 59%);
   --clr-accent-100: hsl(13, 100%, 96%);
 
-  --clr-Primary-400: hsl(228, 39%, 23%);
+  --clr-primary-400: hsl(228, 39%, 23%);
 
-  --clr-neutral-100: hsl(232, 12%, 13%);
-  --clr-neutral-900: hsl(0, 0%, 0%);
+  --clr-neutral-900: hsl(232, 12%, 13%);
+  --clr-neutral-100: hsl(0 0% 100%);
 
-  --ff-primary: 'Be Vietnam Pro', sans-serif;
+  --ff-primary: "Be Vietnam Pro", sans-serif;
 
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
@@ -38,16 +38,21 @@
 
 }
 
-@media (min-width:50em) {
+@media (min-width: 50em) {
   :root {
 
     --fs-body: var(--fs-500);
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-800);
+
+
+
     --fs-nav: var(--fs-300);
 
   }
 }
+
+/* https://piccalil.li/blog/a-modern-css-reset */
 
 /* Box sizing rules */
 *,
@@ -64,8 +69,8 @@
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -78,6 +83,7 @@ html,
 body {
   height: 100%;
 }
+
 
 /* Set core body defaults */
 body {
@@ -116,21 +122,24 @@ svg {
   }
 }
 
-
-/* Utiliy Classes */
+/* Utility classes */
 
 .text-primary-400 {
   color: var(--clr-primary-400);
 }
+
 .text-accent-400 {
   color: var(--clr-accent-400);
 }
+
 .text-accent-100 {
   color: var(--clr-accent-100);
 }
+
 .text-neutral-100 {
   color: var(--clr-neutral-100);
 }
+
 .text-neutral-900 {
   color: var(--clr-neutral-900);
 }
@@ -138,15 +147,19 @@ svg {
 .bg-primary-400 {
   background-color: var(--clr-primary-400);
 }
+
 .bg-accent-400 {
   background-color: var(--clr-accent-400);
 }
+
 .bg-accent-100 {
   background-color: var(--clr-accent-100);
 }
+
 .bg-neutral-100 {
   background-color: var(--clr-neutral-100);
 }
+
 .bg-neutral-900 {
   background-color: var(--clr-neutral-900);
 }
@@ -154,9 +167,11 @@ svg {
 .fw-bold {
   font-weight: var(--fw-bold);
 }
+
 .fw-semi-bold {
   font-weight: var(--fw-semi-bold);
 }
+
 .fw-regular {
   font-weight: var(--fw-regular);
 }
@@ -164,6 +179,7 @@ svg {
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
 }
+
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
 }
@@ -172,12 +188,45 @@ svg {
 .fs-300 {
   font-size: var(--fs-300);
 }
+
 .fs-400 {
   font-size: var(--fs-400);
 }
+
 .fs-500 {
   font-size: var(--fs-500);
 }
+
 .fs-600 {
   font-size: var(--fs-600);
+}
+
+.hidden{
+  visibility: hidden;
+  height: 0;
+}
+
+.container{
+  --max-width:1110px;
+  --padding:1rem;
+ 
+   width: min(var(--max-width),100% - var(--padding)*2);
+   margin-inline: auto;
+}
+.even-columns{
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width:50em) {
+  .even-columns{
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+/* general styling */
+
+body{
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--clr-primary-400);
 }
