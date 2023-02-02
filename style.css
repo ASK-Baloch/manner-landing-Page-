@@ -175,7 +175,9 @@ p[data-width="wide"] {
   background-color: var(--clr-neutral-100);
   color: var(--clr-accent-400);
 }
-
+.button[data-shadow="none"]{
+  box-shadow: none;
+}
 .button:hover,
 .button:focus-visible {
   background-color: var(--clr-accent-300);
@@ -240,7 +242,7 @@ p[data-width="wide"] {
     gap: var(--size-600);
     width: 100%;
     box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.5), 0 0 0 1000vmax rgb(0 0 0 / 0.75);
-
+  z-index: 1;
   }
 
   .primary-header[data-overlay]::before {
@@ -296,7 +298,107 @@ p[data-width="wide"] {
   position: fixed;
 } */
 
+/* footer */
+.primary-footer {
+  --logo-color:var(--clr-neutral-100);
+  padding: 41px 0;
+}
+.primary-footer-wrapper{
+  display: grid;
+  gap: var(--size-700) !important;
+  grid-template-areas: 
+  'form'
+  'nav'
+  'logo-social';
+}
+@media (min-width:40em) {
+  .primary-footer-wrapper{
+    display: grid;
+    gap: var(--size-700) !important;
+    grid-template-areas: 
+    'logo-social nav form';
+  }
+  .primary-footer-logo-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  
+  }
+}
 
+  
+
+
+@media (max-width:40em) {
+  .primary-footer-logo-social {
+    grid-area: logo-social ;
+  
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: var(--size-700);
+  
+    /* background: red; */
+  }
+  .primary-footer-nav{
+    grid-area: nav ;
+    /* background: red; */
+  }
+  .primary-footer-form{
+    grid-area:form ;
+    /* background: red; */
+  }
+  
+
+  .primary-footer-wrapper > * {
+    /* outline: 2px solid red; */
+    /* text-align: center; */
+    /* justify-content: center; */
+    margin-inline: auto;
+  }
+  
+}
+
+@media (min-width:40em) {
+  
+  .primary-footer .social-icon{
+    margin: 72px 0  0 0 ;
+  }
+}
+/* footer navigation */
+
+.footer-nav{
+  columns: 2;
+  gap: max(18vw  , 2rem);
+}
+.footer-nav a{
+  color: var(--clr-neutral-100);
+  text-decoration: none;
+  padding: 40px 0;
+}
+.footer-nav a:where(:hover,:focus){
+  color: var(--clr-accent-400);
+
+}
+
+/*  social list */
+.social-list{
+display: flex;
+gap: var(--size-600);
+}
+.social-icon{
+  width: var(--size-600);
+  aspect-ratio: 1;
+  fill: var(--clr-neutral-100);
+}
+.social-list a:is(:hover,:focus) .social-icon{
+  fill: var(--clr-accent-400);
+}
+@media (min-width:40em) {
+  .social-icon{
+    width: var(--size-500);
+  }
+}
 /* cta */
 
 .cta {
@@ -474,7 +576,7 @@ background-repeat: no-repeat;
   font-size: var(--fs-600);
 }
 
-.hidden {
+.hidden-1{
   visibility: hidden;
   height: 0;
 }
