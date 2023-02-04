@@ -92,7 +92,8 @@ html:focus-within {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -218,6 +219,7 @@ p[data-width="wide"] {
   display: flex;
   gap: clamp(var(--size-400), 5vw, (var(--size-700)));
   font-weight: var(--fw-bold);
+  text-align: center;
 }
 
 .nav-list a {
@@ -252,7 +254,7 @@ p[data-width="wide"] {
     content: '';
     position: fixed;
     /* z-index: -1; */
-    inset: 0;
+    /* inset: 0; */
     background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
   }
 
@@ -288,10 +290,18 @@ p[data-width="wide"] {
     background: transparent;
     border: 0;
     padding: 0.5em;
+    width: 1.65rem;
+    aspect-ratio: 1 / 1.5;
+
+    background-image: url("./images/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
   }
 
-  .mobile-nav-toggle .icon-close {
-    display: none;
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("./images/icon-close.svg");
   }
 
 }
@@ -302,6 +312,7 @@ p[data-width="wide"] {
 } */
 
 /* footer */
+
 .primary-footer {
   --logo-color: var(--clr-neutral-100);
   padding: 41px 0;
@@ -567,7 +578,7 @@ input:where([type="text"], [type="email"]) {
   margin-inline: var(--size-400);
 }
 
-.slider > * {
+.slider>* {
   position: relative;
   flex: 0 0 auto;
   width: 100%;
@@ -581,13 +592,14 @@ input:where([type="text"], [type="email"]) {
   .a11y-slider-container {
     margin-inline: 0;
   }
-  .slider > * {
+
+  .slider>* {
     width: 50%;
   }
 }
 
 @media (min-width: 50em) {
-  .slider > * {
+  .slider>* {
     width: 35%;
   }
 }
@@ -604,12 +616,14 @@ input:where([type="text"], [type="email"]) {
   top: calc(var(--size-800) / 2);
   margin-inline: auto;
 }
+
 .a11y-slider-dots {
   display: flex;
   justify-content: center;
   margin-block: var(--size-500);
   gap: var(--size-300);
 }
+
 .a11y-slider-dots li {
   display: block;
   width: 12px;
@@ -633,38 +647,74 @@ input:where([type="text"], [type="email"]) {
 }
 
 
-/* image with blob bg */
+/* hero img */
 
- @media (max-width:40em) {
-  .hero__image{
+@media (max-width:40em) {
+  .hero__image {
     /* position: relative; */
     order: -1;
-   }
-  
- }
- .hero__image::before{
+  }
+
+}
+
+/* .hero__image {
+  position: relative;
+} */
+
+.hero__image::before {
   content: "";
   position: absolute;
   background-image: url("./images/bg-tablet-pattern.svg");
-  right: 0 ;
+  right: 0;
   top: 0;
   max-height: 70vh;
   max-height: 70dvh;
 
-  width:  91%;
- aspect-ratio: 1 / 1.2 ;
- background-position: bottom left;
- background-repeat: no-repeat;
- z-index: -1;
- }
+  width: 91%;
+  aspect-ratio: 1 / 1.2;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
 
 @media (min-width:40em) {
-  .hero__image::before{
-   width: 45%;
+  .hero__image::before {
+    width: 45%;
 
   }
 
+
 }
+
+/* sale points  */
+.sales-points__blog {
+  position: relative;
+}
+
+.sales-points__blog::before {
+  content: url("images/bg-tablet-pattern.svg");
+ zoom: 35;
+  position: absolute;
+  left: 25%;
+  bottom: 40%;
+  width:100px;
+  z-index: -1;
+
+}
+
+@media (min-width:40em) {
+  .sales-points__blog::before {
+    zoom: 70%;
+    left: -500px;
+    top: 50%;
+    width: 100px;
+    z-index: -1;
+    
+  }
+}
+/* .sales-points__blog{
+  outline: 2px solid red;
+} */
 /* Utility classes */
 
 .visually-hidden {
@@ -839,9 +889,11 @@ input:where([type="text"], [type="email"]) {
 .margin-bottom-700 {
   margin-block-end: var(--size-700);
 }
-.mx-auto{
+
+.mx-auto {
   margin-inline: auto;
 }
+
 .display-sm-none {
   display: none;
 }
