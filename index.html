@@ -23,7 +23,7 @@
           </svg>
         </a>
         <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-           <button class="icon-hamburger" style="display: none;"> <i  class="fa fa-bars"></i> </button> 
+          <button class="icon-hamburger" style="display: none;"> <i class="fa fa-bars"></i> </button>
           <!-- the legal way to do instead of pics 
           <i class="fa fa-bars"></i><br><i class="fa fa-times"></i><br>  -->
           <span class="visually-hidden">Menu</span>
@@ -54,7 +54,7 @@
               view.</p>
             <button class="button">Get Started</button>
           </div>
-          <div  class="hero__image">
+          <div class="hero__image">
             <img class="mx-auto" src="./images/illustration-intro.svg" alt="">
           </div>
         </div>
@@ -65,7 +65,8 @@
         <div class="even-columns">
           <div class=" sales-points__blog | flow text-center-sm-only margin-bottom-700" style="--flow-space:1.5rem  ">
             <h2 class="fs-secondary-heading fw-bold">What’s different about Manage?</h2>
-            <p style="word-wrap: break; word-spacing: 5px;  " data-width="wide" >Manage provides all the functionality your team needs,
+            <p style="word-wrap: break; word-spacing: 5px;  " data-width="wide">Manage provides all the functionality
+              your team needs,
               without the complexity. Our software is
               tailor-made for modern
               digital product teams.</p>
@@ -181,43 +182,45 @@
   <!-- =====  Footer ===== -->
   <footer class=" primary-footer |padding-block-700   bg-neutral-900 text-neutral-100">
     <div class="container">
-      <div class="primary-footer-wrapper">
-        <div class="primary-footer-logo-social">
-          <a href="#" aria-label="home">
-            <svg class="logo" width="146" height="24">
-              <use xlink:href="images/logo.svg#logo"></use>
-            </svg>
-          </a>
+      <div class="primary-footer__wrapper">
+   
 
-          <ul class="social-list" role="list" aria-label="Social links">
-            <li><a aria-label="facebook" href="#">
-                <svg class="social-icon">
-                  <use xlink:href="images/social-icons.svg#icon-facebook"></use>
-                </svg></a>
-            </li>
-            <li><a aria-label="youtube" href="#">
-                <svg class="social-icon">
-                  <use xlink:href="images/social-icons.svg#icon-youtube"></use>
-                </svg>
-              </a></li>
-            <li><a aria-label="twitter" href="#">
-                <svg class="social-icon">
-                  <use xlink:href="images/social-icons.svg#icon-twitter"></use>
-                </svg>
-              </a></li>
-            <li><a aria-label="pinterest" href="#">
-                <svg class="social-icon">
-                  <use xlink:href="images/social-icons.svg#icon-pinterest"></use>
-                </svg>
-              </a></li>
-            <li><a aria-label="instragram" href="#">
-                <svg class="social-icon">
-                  <use xlink:href="images/social-icons.svg#icon-instagram"></use>
-                </svg>
-              </a></li>
-          </ul>
-        </div>
-        <div class="primary-footer-nav">
+   
+        <a class="primary-footer__logo" href="#" aria-label="home">
+          <svg class="logo " width="146" height="24">
+            <use xlink:href="images/logo.svg#logo"></use>
+          </svg>
+        </a>
+
+        <ul class="social-list" role="list" aria-label="Social links">
+          <li><a  aria-label="facebook"  href="https://fb.watch/iv5Tiw5fhd/" target="_blank"> 
+              <svg class="social-icon">
+                <use xlink:href="images/social-icons.svg#icon-facebook"></use>
+              </svg></a>
+          </li>
+          <li><a aria-label="youtube" href="#">
+              <svg class="social-icon">
+                <use xlink:href="images/social-icons.svg#icon-youtube"></use>
+              </svg>
+            </a></li>
+          <li><a aria-label="twitter" href="#">
+              <svg class="social-icon">
+                <use xlink:href="images/social-icons.svg#icon-twitter"></use>
+              </svg>
+            </a></li>
+          <li><a aria-label="pinterest" href="#">
+              <svg class="social-icon">
+                <use xlink:href="images/social-icons.svg#icon-pinterest"></use>
+              </svg>
+            </a></li>
+          <li><a aria-label="instragram" href="#">
+              <svg class="social-icon">
+                <use xlink:href="images/social-icons.svg#icon-instagram"></use>
+              </svg>
+            </a></li>
+        </ul>
+    
+        <div class="primary-footer__nav">
           <nav class="footer-nav">
             <ul class="flow" style="--flow-spacer:1em" aria-label="Footer" role="list">
               <li><a href="#">Home</a></li>
@@ -230,9 +233,9 @@
             </ul>
           </nav>
         </div>
-        <div class="primary-footer-form">
-          <form>
-            <!-- name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true">
+        <!-- <div class="primary-footer-form"> -->
+        <form class="primary-footer__form">
+          <!-- name="contact" netlify-honeypot="bot-field" method="POST" data-netlify="true">
             <input type=" hidden-1" name="form-name" value="contact">
             <p class=" hidden-1">
               <label class="hidden-1">
@@ -240,11 +243,11 @@
               </label>
             </p> -->
 
-            <input type="email">
-            <button class="button" data-shadow="none">Go</button>
-          </form>
-          <p>Copyright &copy; 2020. All Rights Reserved</p>
-        </div>
+          <input type="email" placeholder="Enter Your Email">
+          <button class="button" data-shadow="none">Go</button>
+        </form>
+        <p class="primary-footer__copyright">Copyright &copy; 2020. All Rights Reserved</p>
+        <!-- </div> -->
       </div>
     </div>
   </footer>
